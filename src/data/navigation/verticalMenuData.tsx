@@ -3,8 +3,8 @@ import type { VerticalMenuDataType } from '@/types/menuTypes'
 
 const verticalMenuData = (): VerticalMenuDataType[] => [
   {
-    label: 'Campañas',
-    href: '/campaings',
+    label: 'Trade Panel',
+    href: '/trade-panel',
     icon: 'tabler-smart-home'
   },
   {
