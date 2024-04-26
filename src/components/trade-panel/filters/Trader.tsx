@@ -18,7 +18,7 @@ export default function Trader() {
   return (
     <Box
       mb={5}>
-      <FormControl sx={{ m: 1, minWidth: 250 }}>
+      <FormControl sx={{ minWidth: 250 }}>
         < InputLabel id="simple-select-trader-label" > Trader</InputLabel >
         <Select
           labelId="simple-select-trader-label"

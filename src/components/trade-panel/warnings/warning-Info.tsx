@@ -1,49 +1,44 @@
 import React from 'react';
 
-// import TextField from '@material-ui/core/TextField';
-import TextField from '@mui/material/TextField';
-// import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Box, Divider, Typography } from '@mui/material';
+import { Box, Divider, Typography, TextField } from '@mui/material';
 
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       '& .MuiTextField-root': {
-//         //margin: theme.spacing(1),
-//         //minwidth: '250px',
-//       },
-//     },
-//   }),
-// );
+export default function WarningInfo() {
 
-export default function Details() {
-  // const classes = useStyles();
 
   return (
     <Box>
-      <Typography
-        variant='h5'
-        // align='center'
-        pt={3}
-        pb={3}
-      >
-        {`Detalles de la Campaña `}
-      </Typography>
-      <Divider variant="middle" />
-      <Box
-        width={800}
-        pt={10}
-        pb={12}
-      >
-        <TextField
-          disabled
-          id="filled-disabled"
-          label="Campaña"
-          defaultValue="ACCIÓN MÁS CASHBACK CICLO 4"
-          variant="filled"
-          fullWidth
-        />
+      <Box display={'flex'}>
+        <Box
+          width={600}
+          pt={10}
+          pb={12}
+        >
+          <TextField
+            disabled
+            id="filled-disabled"
+            label=""
+            defaultValue="> % rechazos por margen"
+            variant="filled"
+            fullWidth
+          />
+        </Box>
+        <Box
+          width={600}
+          pt={10}
+          pb={12}
+          pl={8}
+        >
+          <TextField
+            disabled
+            id="filled-disabled"
+            label="Posible Problema"
+            defaultValue="> Problema: el PVP mín y máximo es demasiado acotado"
+            variant="filled"
+            fullWidth
+          />
+        </Box>
       </Box>
+
       <Box
         display="flex"
       >

@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,11 +19,11 @@ export default function ContainedButtons() {
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" href="/logined">Buscar</Button>
-      <Button variant="contained" color="primary">
-        Primary
+      <Button variant="contained" color="success" href="/">Buscar</Button>
+      <Button variant="outlined" color="primary">
+        Cancelar
       </Button>
-      <Button variant="contained" color="secondary">
+      {/* <Button variant="contained" color="secondary">
         Secondary
       </Button>
       <Button variant="contained" disabled>
@@ -31,7 +31,7 @@ export default function ContainedButtons() {
       </Button>
       <Button variant="contained" color="primary" href="#contained-buttons">
         Link
-      </Button>
+      </Button> */}
     </div>
   );
 }
