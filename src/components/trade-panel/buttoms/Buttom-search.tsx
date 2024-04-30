@@ -3,6 +3,7 @@ import React from 'react';
 import type { Theme } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/core';
 import Button from '@mui/material/Button';
+import { Box } from '@mui/material';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,11 +19,19 @@ export default function ContainedButtons() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Button variant="contained" color="success" href="/">Buscar</Button>
-      <Button variant="outlined" color="primary">
-        Cancelar
-      </Button>
+    <Box
+      mt={5}
+      ml={5}
+      mb={5}
+      display={'flex'}>
+      <Box>
+        <Button variant="contained" color="success" href="/">Buscar</Button>
+      </Box>
+      <Box ml={5}>
+        <Button variant="outlined" color="primary">
+          Cancelar
+        </Button>
+      </Box>
       {/* <Button variant="contained" color="secondary">
         Secondary
       </Button>
@@ -32,6 +41,6 @@ export default function ContainedButtons() {
       <Button variant="contained" color="primary" href="#contained-buttons">
         Link
       </Button> */}
-    </div>
+    </Box>
   );
 }

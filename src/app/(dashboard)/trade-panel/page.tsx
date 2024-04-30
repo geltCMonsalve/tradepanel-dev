@@ -20,7 +20,6 @@ import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 
 import SearchDate from "@/components/trade-panel/filters/Search-date";
-import Campaings from "@components/trade-panel/filters/Campaings";
 import Trader from "@components/trade-panel/filters/Trader";
 import ButtomSearch from "@components/trade-panel/buttoms/Buttom-search";
 import Details from '@/components/trade-panel/details/Details';
@@ -35,7 +34,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function BasicGrid() {
+export default function TradePanel() {
   return (
     <Box>
       <Card>
@@ -55,7 +54,7 @@ export default function BasicGrid() {
             <CardContent>
               <FormControl>
                 <Trader />
-                <Campaings />
+                {/* <Campaings /> */}
                 <SearchDate />
               </FormControl>
             </CardContent>
