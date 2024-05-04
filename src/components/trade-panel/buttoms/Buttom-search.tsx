@@ -1,22 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import type { Theme } from '@material-ui/core';
-import { makeStyles, createStyles } from '@material-ui/core';
+// import type { Theme } from '@material-ui/core';
+
+// import { makeStyles, createStyles } from '@material-ui/core';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-      },
-    },
-  }),
-);
+import Details from '../details/Details';
 
-export default function ContainedButtons() {
-  const classes = useStyles();
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       '& > *': {
+//         margin: theme.spacing(1),
+//       },
+//     },
+//   }),
+// );
+
+export function ContainedButtons() {
+  // const classes = useStyles();
+
+  useEffect(() => {
+    <>{
+      <Details />
+    }
+    </>
+  }, [])
+
+
+  const handleClick = () => {
+    console.log('aki');
+
+    // useEffect();
+
+  }
 
   return (
     <Box
@@ -25,7 +43,7 @@ export default function ContainedButtons() {
       mb={5}
       display={'flex'}>
       <Box>
-        <Button variant="contained" color="success" href="/">Buscar</Button>
+        <Button variant="contained" color="success" onClick={handleClick}>Buscar</Button>
       </Box>
       <Box ml={5}>
         <Button variant="outlined" color="primary">

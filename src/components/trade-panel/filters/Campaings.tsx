@@ -8,19 +8,15 @@ import type { SelectChangeEvent } from '@mui/material/Select';
 import Select from '@mui/material/Select';
 import { Box } from '@mui/material';
 
-import Data from '@/data/Data';
+import { USERS, CAMPAINGNS } from '@/data/Data';
 
 export default function Campaings({ idTrader = '000' }) {
 
-  const [Campaings, setAge] = React.useState('');
+  const [CampaingName, setCampaingName] = React.useState('');
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+    setCampaingName(event.target.value);
   };
-
-  const campaings = (Data[1].campaingns) ? Data[1].campaingns : ['NO CAMPAÑAS'];
-
-  // console.log(Campaings);
 
 
   return (
@@ -32,7 +28,7 @@ export default function Campaings({ idTrader = '000' }) {
         <Select
           labelId="simple-select-campaings-label"
           id="simple-select-campaings"
-          value={Campaings}
+          value={CampaingName}
           label="Campañas77777"
           onChange={handleChange}
           fullWidth
@@ -41,9 +37,9 @@ export default function Campaings({ idTrader = '000' }) {
             <em>Seleccione</em>
           </MenuItem>
           {
-            campaings.filter(campaings => campaings.idUser == idTrader)
-              .map(campaings => (
-                <MenuItem key={campaings.id} value={campaings.id}>{campaings.campaignName}</MenuItem>))
+            CAMPAINGNS.filter(CAMPAINGNS => CAMPAINGNS.idUser == idTrader)
+              .map(CAMPAINGNS => (
+                <MenuItem key={CAMPAINGNS.id} value={CAMPAINGNS.id}>{CAMPAINGNS.campaignName}</MenuItem>))
           }
           {/* <MenuItem value={10}>ACCIÓN MÁS CASHBACK CICLO 4</MenuItem>
           <MenuItem value={20}>PASCUAL MIMIK ENERO 2024</MenuItem>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Data from "@/data/Data"
+import { USERS } from "@/data/Data"
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -14,16 +14,12 @@ import Campaings from "@components/trade-panel/filters/Campaings";
 
 
 export default function Trader() {
-  const [Trader, setAge] = React.useState('');
+  const [idTrader, setIdtrader] = React.useState('');
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+    setIdtrader(event.target.value);
   };
 
-  console.log(Trader);
-
-  const users = (Data[0].users) ? Data[0].users : []
-
-  // console.log(Data[0].users);
+  console.log(idTrader);
 
   return (
     <Box
@@ -33,7 +29,7 @@ export default function Trader() {
         <Select
           labelId="simple-select-trader-label"
           id="simple-select-trader"
-          value={Trader}
+          value={idTrader}
           label="Trader"
           onChange={handleChange}
           fullWidth
@@ -42,7 +38,7 @@ export default function Trader() {
             <em>Seleccione</em>
           </MenuItem>
           {
-            users.map(({ idUser, name }) => (
+            USERS.map(({ idUser, name }) => (
               <MenuItem
                 key={idUser}
                 value={idUser}
@@ -57,7 +53,7 @@ export default function Trader() {
           <MenuItem value={40}>Manuel Feando</MenuItem> */}
         </Select>
       </FormControl>
-      <Campaings idTrader={Trader} />
+      <Campaings idTrader={idTrader} />
     </Box >
   );
 }

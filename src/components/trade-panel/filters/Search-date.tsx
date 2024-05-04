@@ -6,7 +6,10 @@ import Box from '@mui/material/Box';
 import CustomTextField from '@mui/material/TextField';// @core/components/mui/text-field'
 
 const SearchDate = () => {
-  const [date, setDate] = useState<Date | null | undefined>(new Date());
+  const today = new Date();
+  const [date, setDate] = useState<Date | null | undefined>(today);
+
+  console.log(today);
 
   return (
     <Box
@@ -23,6 +26,7 @@ const SearchDate = () => {
         >
           <Box>
             <AppReactDatepicker
+              dateFormat="dd/MM/yyyy"
               selected={date}
               onChange={(date: Date) => setDate(date)}
               placeholderText='Click y selecciona Fecha de Inicio'
@@ -32,6 +36,7 @@ const SearchDate = () => {
           </Box>
           <Box pl={2}>
             <AppReactDatepicker
+              dateFormat="dd/MM/yyyy"
               selected={date}
               onChange={(date: Date) => setDate(date)}
               placeholderText='Click y selecciona Fecha Fin'

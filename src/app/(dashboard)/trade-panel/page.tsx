@@ -2,92 +2,186 @@
 
 import * as React from 'react';
 
-// Config Imports
-import themeConfig from '@configs/themeConfig'
-import { ButtonGroup, Typography } from '@mui/material';
+import { useState, useEffect } from 'react';
 
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import type { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
+import CustomTextField from '@mui/material/TextField';// @core/components/mui/text-field'
+import { Button } from '@mui/material';
 
-import FormControl from '@mui/material/FormControl';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-// import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import Container from '@mui/material/Container';
+import AppReactDatepicker from '@/utils/AppReactDatepicker';
 
-import SearchDate from "@/components/trade-panel/filters/Search-date";
-import Trader from "@components/trade-panel/filters/Trader";
-import ButtomSearch from "@components/trade-panel/buttoms/Buttom-search";
-import Details from '@/components/trade-panel/details/Details';
-import Warning from '@/components/trade-panel/warnings/Warning';
+import { USERS, CAMPAIGNS } from '@/data/Data'
 
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'left',
-  color: theme.palette.text.secondary,
-}));
+
+function FilterInformation({ users, campaigns }) {
+
+
+  return (
+    <div>
+      <SelectFilters traders={users} campaigns={campaigns} />
+      <DateFilters />
+
+    </div>
+  );
+
+}
+
+function SelectFilters({ traders, campaigns }) {
+  const [idTrader, setIdtrader] = useState();
+  const [filterCampaigns, setfilterCampaigns] = useState([])
+
+
+  // useEffect(() => {
+  //   setIdtrader("456")
+  // }, [])
+
+  const handleChangeTrader = (event: SelectChangeEvent) => {
+    setIdtrader(event.target.value);
+
+    const filtersValues = campaigns.filter(row => {
+      if (row.idUser.includes(idTrader)) {
+
+
+        return true;
+      }
+
+
+      return false;
+    })
+
+    setfilterCampaigns(filtersValues);
+
+  };
+
+
+  return (
+    <div>
+      < InputLabel id="select-trader-label" >Trader</InputLabel >
+      <Select
+        labelId="select-trader-label"
+        id="select-trader"
+        value={traders[0].idUser}
+        label="Trader"
+        onChange={handleChangeTrader}
+        fullWidth
+      >
+        <MenuItem disabled value="">
+          <em>Seleccione</em>
+        </MenuItem>
+        {
+
+          traders.map(({ idUser, name }) => (
+            <MenuItem
+              key={idUser}
+              value={idUser}
+            >
+              {name}
+            </MenuItem>
+          ))
+        }
+      </Select>
+
+      < InputLabel id="select-campaigns-label" >Campañas</InputLabel >
+      <Select
+        labelId="select-campaigns-label"
+        id="select-campaigns"
+        value={campaigns[0].id}
+        label="Campañas"
+
+        // onChange={handleChangeCampaigns}
+        fullWidth
+      >
+        <MenuItem disabled value="">
+          <em>Seleccione</em>
+        </MenuItem>
+        {
+
+          filterCampaigns.map(({ id, idUser, campaignName }) => (
+            <MenuItem
+              key={id}
+              value={id}
+            >
+              {campaignName}
+            </MenuItem>
+          ))
+        }
+      </Select>
+
+
+    </div >
+  );
+
+}
+
+
+function DateFilters() {
+  const today = new Date();
+  const [date, setDate] = useState<Date | null | undefined>(today);
+
+  console.log(today);
+
+  return (
+    <div>
+      <AppReactDatepicker
+        dateFormat="dd/MM/yyyy"
+        selected={date}
+        onChange={(date: Date) => setDate(date)}
+        placeholderText='Click y selecciona Fecha de Inicio'
+        customInput={<CustomTextField label='Fecha Inicio' fullWidth />}
+      />
+
+
+      <AppReactDatepicker
+        dateFormat="dd/MM/yyyy"
+        selected={date}
+        onChange={(date: Date) => setDate(date)}
+        placeholderText='Click y selecciona Fecha Fin'
+        customInput={<CustomTextField label='Fecha Fin' fullWidth />}
+      />
+    </div>
+  );
+}
+
+function BotomSearch() {
+  const [results, setResults] = useState(false);
+
+  function handleClick() {
+    console.log('Clicked');
+    setResults(true)
+
+  }
+
+  console.log(results);
+
+  return (
+    <div>
+      <Button variant="contained" color="success" onClick={handleClick}>Buscar</Button>
+      {results && <Results dataResults={results} />}
+    </div>
+  );
+}
+
+function Results({ dataResults }) {
+  return (
+    <div>RESULTS</div>
+  );
+
+}
 
 export default function TradePanel() {
+
+
+
   return (
-    <Box>
-      <Card>
-        <Box
-          mb={5}>
-          <Card>
-            {/* <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}! 👋🏻`}</Typography> */}
-            <Typography
-              variant='h4'
-              align='center'
-              pt={3}
-              pb={3}
-            >
-              {`Trade Panel `}
-            </Typography>
-            <Divider variant="middle" />
-            <CardContent>
-              <FormControl>
-                <Trader />
-                {/* <Campaings /> */}
-                <SearchDate />
-              </FormControl>
-            </CardContent>
-            <Divider variant="middle" />
-            <CardActions className='card-actions-dense'>
-              <ButtomSearch />
-            </CardActions>
-          </Card>
-        </Box>
-        <Box
-          mb={10}>
-          <Card>
-            <CardContent>
-              <Details />
-            </CardContent>
-            {/* <Divider variant="middle" /> */}
-            {/* <CardActions className='card-actions-dense'>
-            <Button variant='text'>Button</Button>
-          </CardActions> */}
-          </Card>
-        </Box>
-        <Box>
-          <Card>
-            <CardContent>
-              <Warning />
-            </CardContent>
-            {/* <Divider variant="middle" /> */}
-            {/* <CardActions className='card-actions-dense'>
-            <Button variant='text'>Button</Button>
-          </CardActions> */}
-          </Card>
-        </Box>
-      </Card>
-    </Box >
+    <main>
+      <div>
+        <FilterInformation users={USERS} campaigns={CAMPAIGNS} />
+        <BotomSearch />
+      </div>
+    </main>
   );
 }
