@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { USERS } from "@/data/Data"
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -10,11 +9,14 @@ import type { SelectChangeEvent } from '@mui/material/Select';
 import Select from '@mui/material/Select';
 import Box from '@mui/material/Box';
 
+import { USERS } from "@/data/Data"
+
 import Campaings from "@components/trade-panel/filters/Campaings";
 
 
 export default function Trader() {
   const [idTrader, setIdtrader] = React.useState('');
+
   const handleChange = (event: SelectChangeEvent) => {
     setIdtrader(event.target.value);
   };

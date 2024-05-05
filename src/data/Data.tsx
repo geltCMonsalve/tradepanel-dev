@@ -32,7 +32,12 @@ export const CAMPAIGNS =
       manager: 'Laura Aranda',
       marc: 'GELT',
       dateIni: '15/04/2024',
-      dateEnd: '30/04/2024'
+      dateEnd: '30/04/2024',
+      TiempoTranscurrido: '15 Días',
+      Unidades: '82 / 3600',
+      PresupuestoConsumido: '33€ / 3600€',
+      RentabilidadActual: '75%',
+      RentabilidadEstimada: '58%'
 
     },
     {
@@ -43,7 +48,12 @@ export const CAMPAIGNS =
       manager: "Maria Castro",
       marc: 'GELT',
       dateIni: '15/04/2024',
-      dateEnd: '30/04/2024'
+      dateEnd: '30/04/2024',
+      TiempoTranscurrido: '15 Días',
+      Unidades: '82 / 3600',
+      PresupuestoConsumido: '33€ / 3600€',
+      RentabilidadActual: '75%',
+      RentabilidadEstimada: '58%'
     },
     {
       id: '5948',
@@ -53,7 +63,12 @@ export const CAMPAIGNS =
       manager: 'Franco Marco',
       marc: 'GELT',
       dateIni: '15/04/2024',
-      dateEnd: '30/04/2024'
+      dateEnd: '30/04/2024',
+      TiempoTranscurrido: '15 Días',
+      Unidades: '82 / 3600',
+      PresupuestoConsumido: '33€ / 3600€',
+      RentabilidadActual: '75%',
+      RentabilidadEstimada: '58%'
     },
     {
       id: '5945',
@@ -63,7 +78,12 @@ export const CAMPAIGNS =
       manager: "Davinia Plata",
       marc: 'Mahou',
       dateIni: '15/04/2024',
-      dateEnd: '30/04/2024'
+      dateEnd: '30/04/2024',
+      TiempoTranscurrido: '15 Días',
+      Unidades: '82 / 3600',
+      PresupuestoConsumido: '33€ / 3600€',
+      RentabilidadActual: '75%',
+      RentabilidadEstimada: '58%'
     },
     {
       id: '5942',
@@ -73,6 +93,11 @@ export const CAMPAIGNS =
       manager: 'Laura Aranda',
       marc: 'Mahou',
       dateIni: '15/04/2024',
-      dateEnd: '30/04/2024'
+      dateEnd: '30/04/2024',
+      TiempoTranscurrido: '15 Días',
+      Unidades: '82 / 3600',
+      PresupuestoConsumido: '33€ / 3600€',
+      RentabilidadActual: '75%',
+      RentabilidadEstimada: '58%'
     }
   ]
