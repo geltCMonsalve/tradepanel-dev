@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 
 import { USERS } from "@/data/Data"
 
-import Campaings from "@components/trade-panel/filters/Campaings";
+import Campaings from "@/components/trade-panel/X_filters/Campaings";
 
 
 export default function Trader() {

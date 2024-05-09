@@ -6,7 +6,7 @@ import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
 
-import Details from '../details/Details';
+import Details from '../X_details/Details';
 
 // const useStyles = makeStyles((theme: Theme) =>
 //   createStyles({
