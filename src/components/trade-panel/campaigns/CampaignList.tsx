@@ -2,12 +2,14 @@ import { Box } from "@mui/material";
 
 import { CAMPAIGNS } from '@/data/Data'
 
-import { Campaign } from "./Campaign";
+// import { Campaign } from "../results/campaigns/Campaign";
+import CampaignDetails from "./CampaignDetails";
 
 // import Warnings from "../warnings/Warnings";
 
 
-export function ListCampaigns({ idTrader }) {
+export function CampaignList({ idTrader, campaignStatus }) {
+
 
 
   // const emailTradeSession = 'belen.nunez@gelt.com'
@@ -35,14 +37,20 @@ export function ListCampaigns({ idTrader }) {
   // console.log(emailTrader);
 
 
+
+
   return (
 
     <Box mt={10} mb={10}>
-      {CAMPAIGNS.filter(rowCampaigns => rowCampaigns.iduser == idTrader) //rowCampaigns.iduser.includes(idTrader))
+      {CAMPAIGNS.filter(rowCampaigns => rowCampaigns.iduser == idTrader && rowCampaigns.activo == campaignStatus) //rowCampaigns.iduser.includes(idTrader))
         .map(rowCampaign => (
 
-          // <Box mt={10} key={rowCampaign.id}>
-          <Campaign key={rowCampaign.id} campaign={rowCampaign} />
+          <Box mt={5} key={rowCampaign.id}>
+            <CampaignDetails campaign={rowCampaign} />
+            {/* <Campaign key={rowCampaign.id} campaign={rowCampaign} /> */}
+          </Box>
+
+
 
         ))}
     </Box>

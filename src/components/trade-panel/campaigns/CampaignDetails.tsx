@@ -12,9 +12,9 @@ import { Box, Chip, Grid } from '@mui/material'
 import Badge from '@mui/material/Badge'
 
 import CustomTextField from '@/@core/components/mui/TextField'
-import Actions from '../warnings/Actions'
+import CampaignActions from './CampaignActions'
 
-const CampaignAccordion = ({ campaign }) => {
+const CampaignDetails = ({ campaign }) => {
   // States
   const [expanded, setExpanded] = useState<string | false>(false)
 
@@ -113,7 +113,7 @@ const CampaignAccordion = ({ campaign }) => {
               </Grid>
             </Box>
             <Box mb={5}>
-              <Actions />
+              <CampaignActions />
             </Box>
             {/* <Typography>
               Wafer sesame snaps chocolate bar candy canes halvah. Cupcake sesame snaps sweet tart dessert biscuit.
@@ -150,4 +150,4 @@ const CampaignAccordion = ({ campaign }) => {
   )
 }
 
-export default CampaignAccordion
+export default CampaignDetails

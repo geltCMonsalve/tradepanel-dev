@@ -38,6 +38,34 @@ export const USERS =
     }
   ]
 
+export const campaigns = [
+  {
+    'infoCampaign': [
+      {
+        id: 555,
+        nombre: "Nexpreso 2024",
+        status: true
+      },
+      {
+        'warnings': [
+          {
+            infoWarning: "Problemas de tickets"
+          },
+          {
+            'actions': [
+              {
+                Action1: "Hacer revision de tickets",
+                Action2: "Cambiar los activos tickets"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+
+
 export const CAMPAIGNS = [
   {
     "id": "456",
@@ -53,7 +81,7 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "456",
+    "id": "4566",
     "name": "PASCUAL MIMIK ENERO 2024",
     "activo": true,
     "datecrea": "2023-12-21",
@@ -66,7 +94,7 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "456",
+    "id": "4776",
     "name": "CICLO 4 [26-01-24]",
     "activo": true,
     "datecrea": "2023-12-21",
@@ -79,7 +107,7 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "456",
+    "id": "956",
     "name": "GELT GO CICLO 4",
     "activo": true,
     "datecrea": "2023-12-21",
@@ -92,7 +120,7 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "456",
+    "id": "9756",
     "name": "CATEGORY FARMACIA CICLO 3",
     "activo": true,
     "datecrea": "2023-12-21",
@@ -105,7 +133,7 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "456",
+    "id": "12456",
     "name": "ACCIÓN RECASHBACK",
     "activo": true,
     "datecrea": "2023-12-21",
@@ -118,9 +146,9 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "311",
+    "id": "31164",
     "name": "CICLO 3 [19-01-24]",
-    "activo": true,
+    "activo": false,
     "datecrea": "2023-12-21",
     "datefin": "2024-12-21",
     "iduser": "159",
@@ -131,12 +159,12 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "311",
+    "id": "311002",
     "name": "MAHOU CRM ENERO 2024",
     "activo": true,
     "datecrea": "2023-12-21",
     "datefin": "2024-12-21",
-    "iduser": "159",
+    "iduser": "112",
     "elapsedtime": "20 Días", // Tiempo transcurrido
     "units": "82/3600",
     "budgetused": "33€/3600€", // Presupuesto consumido
@@ -144,12 +172,12 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "311",
+    "id": "311696",
     "name": "ACCIÓN MÁS CASHBACK CICLO 3",
     "activo": true,
     "datecrea": "2023-12-21",
     "datefin": "2024-12-21",
-    "iduser": "159",
+    "iduser": "112",
     "elapsedtime": "20 Días", // Tiempo transcurrido
     "units": "82/3600",
     "budgetused": "33€/3600€", // Presupuesto consumido
@@ -157,12 +185,12 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "311",
+    "id": "3119889",
     "name": "CICLO 2 [12-01-24]",
     "activo": true,
     "datecrea": "2023-12-21",
     "datefin": "2024-12-21",
-    "iduser": "159",
+    "iduser": "112",
     "elapsedtime": "20 Días", // Tiempo transcurrido
     "units": "82/3600",
     "budgetused": "33€/3600€", // Presupuesto consumido
@@ -170,12 +198,12 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "112",
+    "id": "112000",
     "name": "ACCIÓN MÁS CASHBACK CICLO 2",
     "activo": true,
     "datecrea": "2023-12-21",
     "datefin": "2024-12-21",
-    "iduser": "159",
+    "iduser": "112",
     "elapsedtime": "20 Días", // Tiempo transcurrido
     "units": "82/3600",
     "budgetused": "33€/3600€", // Presupuesto consumido
@@ -183,12 +211,12 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "994",
+    "id": "9554794",
     "name": "PERNORD RICARD SEAGRAM'S 0,0 ENERO 2024",
     "activo": true,
     "datecrea": "2023-12-21",
     "datefin": "2024-12-21",
-    "iduser": "159",
+    "iduser": "994",
     "elapsedtime": "20 Días", // Tiempo transcurrido
     "units": "82/3600",
     "budgetused": "33€/3600€", // Presupuesto consumido
@@ -196,12 +224,38 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   },
   {
-    "id": "112",
+    "id": "110010012",
     "name": "KRAFT HEINZ KETCHUP MERCADONA DICIEMBRE 2023",
     "activo": true,
     "datecrea": "2023-12-21",
     "datefin": "2024-12-21",
-    "iduser": "159",
+    "iduser": "555",
+    "elapsedtime": "20 Días", // Tiempo transcurrido
+    "units": "82/3600",
+    "budgetused": "33€/3600€", // Presupuesto consumido
+    "currentprofitability": "75%", //Rentabilidad Actual
+    "estimatedprofitability": "58%" // Rentabilidad Estimada
+  },
+  {
+    "id": "113312",
+    "name": "NO ACTIVA - MERCADONA DICIEMBRE 2023",
+    "activo": false,
+    "datecrea": "2023-12-21",
+    "datefin": "2024-12-21",
+    "iduser": "555",
+    "elapsedtime": "20 Días", // Tiempo transcurrido
+    "units": "82/3600",
+    "budgetused": "33€/3600€", // Presupuesto consumido
+    "currentprofitability": "75%", //Rentabilidad Actual
+    "estimatedprofitability": "58%" // Rentabilidad Estimada
+  },
+  {
+    "id": "1100100",
+    "name": "NO ACTIVA - KRAFT HEINZ KETCHUP 2023",
+    "activo": false,
+    "datecrea": "2023-12-21",
+    "datefin": "2024-12-21",
+    "iduser": "555",
     "elapsedtime": "20 Días", // Tiempo transcurrido
     "units": "82/3600",
     "budgetused": "33€/3600€", // Presupuesto consumido
@@ -209,3 +263,54 @@ export const CAMPAIGNS = [
     "estimatedprofitability": "58%" // Rentabilidad Estimada
   }
 ]
+
+
+campaigns = [
+  {
+    id: 555,
+    nombre: "Nexpreso 2024",
+    status: true,
+    warnings: [
+      {
+        Warning001: "Uds diferencial ventas"
+      },
+      actions: [
+        {
+          Action1: "Hacer revision de tickets",
+          Action2: "Cambiar los activos tickets"
+        }
+      ],
+      {
+        Warning002: "% rechazos (margen)"
+      },
+      actions: [
+        {
+          Action1: "2Hacer revision de tickets",
+          Action2: "2Cambiar los activos tickets"
+        }
+      ]
+    ]
+  }
+  ,
+
+  {
+    id: 7777,
+    nombre: "ColaCao 2024",
+    status: true,
+    warnings: [
+      {
+        Warning001: "% rechazos (enseña incorrecta)"
+      },
+      actions: [
+        {
+          Action1: "Hacer revision de tickets",
+          Action2: "Cambiar los activos tickets",
+          Action3: "Cambiar los activos tickets",
+        }
+      ]
+
+    ]
+  }
+]
+
+

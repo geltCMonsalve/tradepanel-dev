@@ -54,7 +54,7 @@ const steps2 = [
   },
 ];
 
-export default function Actions() {
+export default function CampaignActions() {
 
   const [activeStep1, setActiveStep1] = useState(0);
   const [activeStep2, setActiveStep2] = useState(0);
