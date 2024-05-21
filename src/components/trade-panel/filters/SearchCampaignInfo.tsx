@@ -25,9 +25,9 @@ export function SearchCampaignInfo({ filterCampaign, onFilterCampaignChange }: C
         getOptionLabel={(option: any) => option.name}
         renderInput={(params) => <TextField {...params} label='Campaigns' />}
         value={filterCampaignown}
-        onChange={(event: any, newValue: CampaignInfo | null) => {
-          setFilterCampaignown(newValue || null);
-          onFilterCampaignChange({ ...filterCampaign, campaignInfo: newValue || null });
+        onChange={(event: any, newValue: { id: string, name: string } | null) => {
+          setFilterCampaignown(newValue as CampaignInfo | null);
+          onFilterCampaignChange({ ...filterCampaign, campaignInfo: newValue });
         }}
       />
     </Box>

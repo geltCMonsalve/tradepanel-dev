@@ -1,37 +1,16 @@
-import { useState } from "react";
+import * as React from 'react';
 
-import { Box } from "@mui/material";
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
-import CustomTextField from "@/@core/components/mui/TextField";
-import AppReactDatepicker from "@/utils/AppReactDatepicker";
-
-export function DateFilters() {
-  const today = new Date();
-  const [date, setDate] = useState<Date | null | undefined>(today);
-
-  // console.log(today);
-
+export default function DateFilters() {
   return (
-    <Box display={'flex'}>
-      <Box ml={10} >
-        <AppReactDatepicker
-          dateFormat="dd/MM/yyyy"
-          selected={date}
-          onChange={(date: Date) => setDate(date)}
-          placeholderText='Click y selecciona Fecha de Inicio'
-          customInput={<CustomTextField label='Fecha Inicio' fullWidth />}
-        />
-      </Box>
-      <Box ml={5} >
-
-        <AppReactDatepicker
-          dateFormat="dd/MM/yyyy"
-          selected={date}
-          onChange={(date: Date) => setDate(date)}
-          placeholderText='Click y selecciona Fecha Fin'
-          customInput={<CustomTextField label='Fecha Fin' fullWidth />}
-        />
-      </Box>
-    </Box>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']}>
+        <DatePicker label="Basic date picker" />
+      </DemoContainer>
+    </LocalizationProvider>
   );
 }
