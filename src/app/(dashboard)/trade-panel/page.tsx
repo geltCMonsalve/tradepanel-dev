@@ -34,9 +34,9 @@ export default function TradePanel() {
         <Box m={5}>
           <Box>
             <Box display={'flex'} >
-              <TraderSelector traders={USERS} filterTrader={infoParams} onFilterTraderChange={setInfoParams} />
-              <SearchCampaignInfo filterCampaign={infoParams} onFilterCampaignChange={setInfoParams as (value: { campaignInfo: string | null; }) => void} />
-              <CampaignStatus filterStatus={infoParams} onFilterStatusChange={setInfoParams as (value: { campaignStatus: boolean; campaignInfo: string | null; }) => void} />
+              <TraderSelector traders={USERS} filterTrader={infoParams} onFilterTraderChange={setInfoParams as (value: { idTrader: string }) => void} />
+              <SearchCampaignInfo filterCampaign={infoParams} onFilterCampaignChange={setInfoParams as (value: { campaignInfo: { id: string; name: string; } | null }) => void} />
+              <CampaignStatus filterStatus={infoParams as { campaignStatus: boolean, campaignInfo: string | null }} onFilterStatusChange={setInfoParams as (value: { campaignStatus: boolean; campaignInfo: string | null; }) => void} />
             </Box >
             <CampaignList infoParams={infoParams} />
           </Box>
